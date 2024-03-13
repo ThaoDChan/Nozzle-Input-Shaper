@@ -24,20 +24,21 @@ make clean KCONFIG_CONFIG=config.nis
 make menuconfig KCONFIG_CONFIG=config.nis
 ```
 5. Set the following settings
-   - [_] Enable extra low-level configuration options
+   - [ * ] Enable extra low-level configuration options
    - Micro-controller Architecture (STMicroelectronics STM32)
    - Processor model (STM32F042)
    - Bootloader offset (No bootloader)
-   - Communication interface (USB (on PA11/PA12))
+   - Clock Reference (Internal Clock)
+   - Communication interface (USB (on PA9/PA10))
    - Optional features (to reduce code size) --->
-       - [*] Support GPIO "bit-banging" devices
+       - [ * ] Support GPIO "bit-banging" devices
        - [_] Support LCD devices
-       - [*] Support external sensor devices
+       - [ * ] Support external sensor devices
        - [_] Support lis2dw 3-axis accelerometer
        - [_] Support software based I2C "bit-banging"
-       - [*] Support software based SPI "bit-banging"
-       - 
-![image](https://github.com/FYSETC/Nozzle-Input-Shaper/assets/5789676/712d4b83-5915-4db0-8082-0c71fb7a7865)
+       - [ * ] Support software based SPI "bit-banging"
+    
+![image](https://github.com/FYSETC/Nozzle-Input-Shaper/assets/5789676/cd5af36d-175f-44a9-9904-70dc69c3b26a)
 ![image](https://github.com/FYSETC/Nozzle-Input-Shaper/assets/5789676/5b5e816c-33a7-47c1-8bda-40ca24a3e27d)
 
 6. Quit (press q) and save the configuration
