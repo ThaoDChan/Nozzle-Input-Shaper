@@ -35,6 +35,7 @@ make menuconfig KCONFIG_CONFIG=config.nis
        - [_] Support LCD devices
        - [ * ] Support external sensor devices
        - [_] Support lis2dw 3-axis accelerometer
+       - [_] Support ldc1612 eddy current sensor
        - [_] Support software based I2C "bit-banging"
        - [ * ] Support software based SPI "bit-banging"
     
@@ -61,16 +62,15 @@ lsusb
    
 5. Run the following command to Flash your NIS, replace the xxxx:yyyy with the ID from the previous step.
 ```bash
-make flash FLASH_DEVICE=xxxx:yyyy
+make flash KCONFIG_CONFIG=config.nis FLASH_DEVICE=xxxx:yyyy
 ```
 Example
 ```bash
-make flash FLASH_DEVICE=0483:df11
+make flash KCONFIG_CONFIG=config.nis FLASH_DEVICE=0483:df11
 ```
    - You may see what appears to be an "error" after flashing your board.
    - As long as you see the File downloded successfully text you are good to proceed.
-6. After it has finished flashing, run the following command again. As long as the device is not showing it is in DFU Mode like in step 3, you are good to move onto the next step.
-7. Run the following command to find the devices serial port name
+6. The command "make flash" should automatically reset the microcontroller. Run the following command to find the devices serial port name
 ```bash
 ls /dev/serial/by-id/*
 ```
